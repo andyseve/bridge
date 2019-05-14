@@ -1,6 +1,12 @@
 /* Author: Anish Sevekari
- * Last Modified: 5/4/2019 12:47:31 AM
+ * Last Modified: Tue 14 May 2019 10:38:11 AM EDT
  * Provides class trick to store bridge rounds */
+
+#ifndef BRIDGE_CORE_TRICK_H
+#define BRIDGE_CORE_TRICK_H
+
+#include "iostream"
+#include "string"
 
 namespace bridge {
 	class trick{
@@ -12,8 +18,11 @@ namespace bridge {
 			trick();
 			~trick();
 			void set_cards(std::string input);
+			void set_trump(char itrump);
 			int get_winner();
-			char* print_trick();
-			char* print_trick(int start);
-	}
+			std::string print_trick();
+			std::string print_trick(int start);
+	};
 }
+
+#endif
