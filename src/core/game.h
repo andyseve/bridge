@@ -1,9 +1,13 @@
 /* Author:Anish Sevekari
- * Last Modified: 5/3/2019 11:38:09 PM
+ * Last Modified: Wed 15 May 2019 07:23:29 PM EDT
  * Provides class game */
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
+
+#ifndef BRIDGE_CORE_GAME_H
+#define BRIDGE_CORE_GAME_H
+
+#include "iostream"
+#include "string"
+#include "vector"
 
 #include "player.h"
 #include "round.h"
@@ -11,9 +15,9 @@
 namespace bridge {
    class game {
 	   public:
-		   bridge::player players[4];
-		   std::pair<bridge::player, bridge::player> teams[2];
-		   bridge::round *rounds;
+		   player players[4];
+		   std::pair<player, player> teams[2];
+		   std::vector<round> rounds;
 
 		   game();
 		   ~game();
@@ -32,3 +36,4 @@ namespace bridge {
    }
 }
 
+#endif

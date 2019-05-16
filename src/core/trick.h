@@ -1,5 +1,5 @@
 /* Author: Anish Sevekari
- * Last Modified: Tue 14 May 2019 10:38:11 AM EDT
+ * Last Modified: Wed 15 May 2019 05:43:06 PM EDT
  * Provides class trick to store bridge rounds */
 
 #ifndef BRIDGE_CORE_TRICK_H
@@ -10,18 +10,29 @@
 
 namespace bridge {
 	class trick{
-		private:
-			std::pair<int,char> cards[4];
-			char trump;
+		/* By definition, tricks start with the first player.
+		 * Keeping track of who goes first is done in the round class
+		 */
+		public:
+			std::pair<char, int> cards[4];
+			char trump, suite;
 			int winner=-1;
+		
 		public:
 			trick();
+			trick(char itrump);
 			~trick();
+			
 			void set_cards(std::string input);
 			void set_trump(char itrump);
+			void set_suite(char isuite);
+			void set_suite();
 			int get_winner();
-			std::string print_trick();
-			std::string print_trick(int start);
+			char get_suite();
+			char get_trump();
+			std::string print_suite();
+			std::string print_trump();
+			std::string print_trick(int start, int col_width);
 	};
 }
 
