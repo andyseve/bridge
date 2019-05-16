@@ -1,5 +1,5 @@
 /* Author: Anish Sevekari
- * Last Modified: Wed 15 May 2019 07:35:26 PM EDT
+ * Last Modified: Wed 15 May 2019 10:03:59 PM EDT
  * Provides class round to store bridge rounds */
 
 #ifndef BRIDGE_CORE_ROUND_H
@@ -19,7 +19,9 @@ namespace bridge {
 		 * Scores are determined in terms of the dealer.
 		 */
 
-		private:
+		public:
+			round();
+			~round();
 			int declarer, dummy;
 			std::vector<std::pair<char,int>> bidding;
 			std::pair<char,int> contract;
@@ -28,13 +30,12 @@ namespace bridge {
 			int start[13], winner[13];
 			int dealer_hands;
 			bool vulnarable;
-			std::pair<int,bool> score; // Stores the winners score.
-		public:
-			round();
-			~round();
-			int get_score();
-			void print_score();
+			int score_above_the_line;
+			int score_below_the_line;
+
 			std::pair<int,char> get_contract();
+
+			void print_score();
 			void print_contract();
 	}
 }
