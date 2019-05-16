@@ -1,5 +1,9 @@
 /* Author: Anish Sevekari
+<<<<<<< HEAD
  * Last Modified: Wed 15 May 2019 05:36:21 PM EDT
+=======
+ * Last Modified: Tue 14 May 2019 05:33:09 PM EDT
+>>>>>>> 5883e0a4cda044017ef5f1d95a5cbe2edcf7d055
  * Function for trick class */
 
 #include "cstdio"
@@ -30,6 +34,7 @@ namespace bridge {
 	void trick::set_trump(char itrump) {this->trump = parse_suite(itrump); this->winner = -1;}
 	void trick::set_suite(char isuite) {this->suite = parse_suite(isuite,0); this->winner = -1;}
 	void trick::set_cards(std::string input){
+<<<<<<< HEAD
 		int i = 0, j=0;
 		char card[3];
 		for(char c :input){
@@ -42,6 +47,9 @@ namespace bridge {
 			this->get_winner();
 			return;
 		}
+=======
+		for(uint i=0,j=0; i<4 && j < input.size();j++){
+>>>>>>> 5883e0a4cda044017ef5f1d95a5cbe2edcf7d055
 	}
 	
 	char trick::get_suite() {return this->suite;}
